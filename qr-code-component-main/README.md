@@ -23,5 +23,4 @@ Users should be able to:
 - Flexbox for alignment
 - Google Fonts (Outfit)
 
-## 📂 Project Structure
 

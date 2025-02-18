@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+}
+
+body {
+    max-width: 1440px;
+    min-height: 100vh;
+    background-color: var(--grey-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+main{
+    background-color: var(--grey-800);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 40px;
+    width: 300px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main img{
+    border-radius: 50%;
+    width: 90px;
+    margin-bottom: 30px;
+}
+
+.main h1{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.main p{
+    color: var(--green);
+    font-weight: 700;
+}
+
+.section-btns p{
+    text-align: center;
+    color: #c4c4c4;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.section-btns .btns{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-btns .btns button{
+    padding: 15px;
+    background-color: var(--grey-700);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.section-btns .btns button:hover {
+    background-color: var(--green);
+    color: var(--Grey800);
+}
+
+@media (max-width: 400px) {
+    main{
+        width: 250px;
+        padding: 25px;
+    }
+}

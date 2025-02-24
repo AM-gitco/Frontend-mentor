@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <form action="#">
+      <div class="inputs-wrapper">
+        <div class="input-group">
+          <label for="day" class="label-day">Day</label>
+          <input type="text" name="day" id="day" placeholder="DD" maxlength="2">
+          <p class="error-msg error-day">This field is required</p>
+        </div>
+        <div class="input-group">
+          <label for="month" class="label-month">Month</label>
+          <input type="text" name="month" id="month" placeholder="MM" maxlength="2">
+          <p class="error-msg error-month">This field is required</p>
+        </div>
+        <div class="input-group">
+          <label for="year" class="label-year">Year</label>
+          <input type="text" name="year" id="year" placeholder="YYYY" maxlength="4">
+          <p class="error-msg error-year">This field is required</p>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <button type="submit" class="btn-submit"><img src="assets/images/icon-arrow.svg" alt="arrow icon" class="icon-arrow"></button>
+      </div>
+    </form>
+    <section class="results">
+      <p class="results-text"><span class="number years">- - </span><span class="years-text">years</span></p>
+      <p class="results-text"><span class="number months">- - </span><span class="months-text">months</span></p>
+      <p class="results-text"><span class="number days">- - </span><span class="days-text">days</span></p>
+    </section>
+  </main> 
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/AM-gitco">M. Abdul Mannan</a>.
+  </footer>
+  <script src="index.js"></script>
+  </div>
+</body>
+</html>

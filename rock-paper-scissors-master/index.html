@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="main.js" defer></script>
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+</head>
+
+<body>
+
+    <div id="overlay"></div>
+
+    <main class="main-container">
+        <section class="scoreboard-container">
+            <div class="board">
+                <div>ROCK</div>
+                <div>PAPER</div>
+                <div>SCISSORS</div>
+            </div>
+            <div class="score-container">
+                <h4>SCORE</h4>
+                <span id='SCORE'></span>
+            </div>
+        </section>
+        <section class="gameplay">
+            <div id="userpick" class="pick-container">
+                <div class="circle-container">
+                </div>
+                <span class="pick-span">YOU PICKED</span>
+            </div>
+            <div class="result-container">
+                <span class="result-span"></span>
+                <button id="playAgain">PLAY AGAIN</button>
+            </div>
+            <div id="computerpick" class="pick-container">
+                <div class="circle-container" id="housePick">
+                    <div class="empty-circle outer-circle">
+
+                    </div>
+                </div>
+                <span class="pick-span">THE HOUSE PICKED</span>
+            </div>
+        </section>
+
+        <div class="change-mode-popup" data-close>
+            <div class="header-container">
+                <button id="close-button"><img src="./images/icon-close.svg"></button>
+            </div>
+            <label for='3-way' class="mode-class"><input id="3-way" name='modeType' value="normal"
+                    type="radio">3-Way</label>
+            <label for='5-way' class="mode-class"><input id="5-way" name='modeType' value="bonus"
+                    type="radio">5-Way</label>
+            <button id="submit" onclick="changeMode()">SUBMIT</button>
+        </div>
+        <div class="rules-popup" data-close>
+            <div class="header">
+                <h2>RULES</h2>
+                <button id="close-button"><img src="./images/icon-close.svg"></button>
+            </div>
+            <img id="rulesIMG" src="./images/image-rules.svg">
+        </div>
+        <div class="footer">
+            <button class="change-mode">Change Mode</button>
+            <button class="rules">RULES</button>
+        </div>
+    </main>
+
+
+    <template data-templates>
+        <div class="pulse">
+            <span style="--i:0;"></span>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+        </div>
+        <section id="pick-template" class="game-container">
+            <div data-pick="paper" class='outer-circle paper' style ="box-shadow: 0 5px 2px hsl(230, 60%, 43%);">
+                <div class="inner-circle">
+                    <img src="images/icon-paper.svg">
+                </div>
+            </div>
+            <div data-pick="scissors" class='outer-circle scissors' style ="box-shadow: 0 5px 2px hsl(32, 97%, 46%);">
+                <div class="inner-circle">
+                    <img src="images/icon-scissors.svg">
+                </div>
+            </div>
+
+            <div data-pick="rock" class='outer-circle rock' style ="box-shadow: 0 5px 2px hsl(349, 84%, 31%)">
+                <div class="inner-circle">
+                    <img src="images/icon-rock.svg">
+                </div>
+            </div>
+        </section>
+        <section id="bonus-template" class="game-container bonus" >
+            <div data-pick="paper" class='outer-circle paper-bonus' style ="box-shadow: 0 5px 2px hsl(230, 60%, 43%);">
+                <div class="inner-circle">
+                    <img src="images/icon-paper.svg">
+                </div>
+            </div>
+            <div data-pick="scissors" class='outer-circle scissors-bonus' style ="box-shadow: 0 5px 2px hsl(32, 97%, 46%);">
+                <div class="inner-circle">
+                    <img src="images/icon-scissors.svg">
+                </div>
+            </div>
+            <div data-pick="rock" class='outer-circle rock-bonus' style ="box-shadow: 0 5px 2px hsl(349, 84%, 31%);">
+                <div class="inner-circle">
+                    <img src="images/icon-rock.svg">
+                </div>
+            </div>
+            <div data-pick="lizard" class='outer-circle lizard-bonus' style ="box-shadow: 0 5px 2px hsl(261, 59%, 42%);">
+                <div class="inner-circle">
+                    <img src="images/icon-lizard.svg">
+                </div>
+            </div>
+            <div data-pick="spock" class='outer-circle spock-bonus' style ="box-shadow: 0 5px 2px hsl(188, 63%, 38%);">
+                <div class="inner-circle">
+                    <img src="images/icon-spock.svg">
+                </div>
+            </div>
+        </section>
+        <section class="gameplay">
+            <div id="userpick" class="pick-container">
+                <div class="circle-container">
+                </div>
+                <span class="pick-span">YOU PICKED</span>
+            </div>
+            <div class="result-container">
+                <span class="result-span"></span>
+                <button onClick="generateGame()" id="playAgain">PLAY AGAIN</button>
+            </div>
+            <div id="computerpick" class="pick-container">
+                <div class="circle-container" id="housePick">
+                    <div class="empty-circle outer-circle">
+
+                    </div>
+                </div>
+                <span class="pick-span">THE HOUSE PICKED</span>
+            </div>
+        </section>
+        <div id="resultContainer" class="result-container">
+            <span class="result-span"></span>
+            <button onClick="generateGame()" id="playAgain">PLAY AGAIN</button>
+        </div>
+    </template>
+
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="" target="_blank">M. Abdul Mannan</a>.
+  </footer>
+</body>
+
+</html>

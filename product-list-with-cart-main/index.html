@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore our selection of desserts and manage your cart with ease. View and confirm your order with a carbon-neutral delivery option."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Frontend Mentor | Product list with cart</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="desserts">
+        <div class="desserts__wrap">
+          <h1 class="desserts__title">Desserts</h1>
+          <div class="desserts__container"></div>
+        </div>
+
+        <div class="cart">
+          <h2 class="cart__title">
+            Your Cart (<span class="cart__count" aria-live="polite">0</span>)
+          </h2>
+
+          <div class="cart__empty">
+            <img
+              src="assets/images/illustration-empty-cart.svg"
+              alt=""
+              role="presentation"
+              class="cart__empty-img"
+            />
+            <p class="cart__empty-text">Your added items will appear here</p>
+          </div>
+
+          <div class="cart__items"></div>
+
+          <div class="cart__selected">
+            <div class="cart__total">
+              <p class="cart__total-label">Order Total</p>
+              <p class="cart__total-price" aria-live="polite">$0.00</p>
+            </div>
+
+            <div class="cart__carbon">
+              <img
+                src="assets/images/icon-carbon-neutral.svg"
+                alt=""
+                class="cart__carbon-img"
+              />
+              <p class="cart__carbon-text">
+                This is a
+                <span class="cart__carbon-highlight">carbon-neutral</span>
+                delivery
+              </p>
+            </div>
+
+            <button class="cart__btn open-dialog">Confirm Order</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog
+      class="dialog"
+      aria-labelledby="dialog-title"
+      aria-describedby="dialog-message"
+    >
+      <div class="dialog__content">
+        <div class="dialog__header">
+          <img
+            class="dialog__image"
+            src="assets/images/icon-order-confirmed.svg"
+            alt=""
+          />
+          <h2 id="dialog-title" class="dialog__title">Order Confirmed</h2>
+          <p id="dialog-message" class="dialog__message">
+            We hope you enjoy your food!
+          </p>
+        </div>
+
+        <div class="dialog__cart-wrap">
+          <div class="dialog__cart"></div>
+
+          <hr class="cart__divider" />
+
+          <div class="cart__total">
+            <p class="cart__total-label">Order Total</p>
+            <p class="cart__total-price" aria-live="polite">$0.00</p>
+          </div>
+        </div>
+
+        <button autofocus class="cart__btn close-dialog">
+          Start New Order
+        </button>
+      </div>
+    </dialog>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/AM-gitco" target="_blank">M. Abdul Mannan</a>.
+  </footer>
+  </body>
+</html>
